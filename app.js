@@ -1,79 +1,24 @@
 // Create Dino Constructor
+function Dino(species, weight, height, diet, where, when, fact) {
+  this.species = species;
+  this.weight = weight;
+  this.height = height;
+  this.diet = diet;
+  this.where = where;
+  this.when = when;
+  this.fact = fact;
+}
 
 // Create Dino Objects
 function createDinoObjects() {
-  var dino1 = {
-    "species": "Triceratops",
-    "weight": 13000,
-    "height": 114,
-    "diet": "herbavor",
-    "where": "North America",
-    "when": "Late Cretaceous",
-    "fact": "First discovered in 1889 by Othniel Charles Marsh"
-  };
-  var dino2 = {
-    "species": "Tyrannosaurus Rex",
-    "weight": 11905,
-    "height": 144,
-    "diet": "carnivor",
-    "where": "North America",
-    "when": "Late Cretaceous",
-    "fact": "The largest known skull measures in at 5 feet long."
-  };
-  var dino3 = {
-    "species": "Anklyosaurus",
-    "weight": 10500,
-    "height": 55,
-    "diet": "herbavor",
-    "where": "North America",
-    "when": "Late Cretaceous",
-    "fact": "Anklyosaurus survived for approximately 135 million years."
-  };
-  var dino4 = {
-    "species": "Brachiosaurus",
-    "weight": 70000,
-    "height": 372,
-    "diet": "herbavor",
-    "where": "North America",
-    "when": "Late Jurasic",
-    "fact": "An asteroid was named 9954 Brachiosaurus in 1991."
-  };
-  var dino5 = {
-    "species": "Stegosaurus",
-    "weight": 11600,
-    "height": 79,
-    "diet": "herbavor",
-    "where": "North America, Europe, Asia",
-    "when": "Late Jurasic to Early Cretaceous",
-    "fact": "The Stegosaurus had between 17 and 22 seperate places and flat spines."
-  };
-  var dino6 = {
-    "species": "Elasmosaurus",
-    "weight": 16000,
-    "height": 59,
-    "diet": "carnivor",
-    "where": "North America",
-    "when": "Late Cretaceous",
-    "fact": "Elasmosaurus was a marine reptile first discovered in Kansas."
-  };
-  var dino7 = {
-    "species": "Pteranodon",
-    "weight": 44,
-    "height": 20,
-    "diet": "carnivor",
-    "where": "North America",
-    "when": "Late Cretaceous",
-    "fact": "Actually a flying reptile, the Pteranodon is not a dinosaur."
-  };
-  var dino8 = {
-    "species": "Pigeon",
-    "weight": 0.5,
-    "height": 9,
-    "diet": "herbavor",
-    "where": "World Wide",
-    "when": "Holocene",
-    "fact": "All birds are living dinosaurs."
-  };
+  let dino1 = new Dino("Triceratops", 13000, 114, "herbavor", "North America", "Late Cretaceous", "First discovered in 1889 by Othniel Charles Marsh");
+  let dino2 = new Dino("Tyrannosaurus Rex", 11905, 144, "carnivor", "North America", "Late Cretaceous", "The largest known skull measures in at 5 feet long.");
+  let dino3 = new Dino("Anklyosaurus", 10500, 55, "herbavor", "North America", "Late Cretaceous", "Anklyosaurus survived for approximately 135 million years.");
+  let dino4 = new Dino("Brachiosaurus", 70000, 372, "herbavor", "North America", "Late Jurasic", "An asteroid was named 9954 Brachiosaurus in 1991.");
+  let dino5 = new Dino("Stegosaurus", 11600, 79, "herbavor", "North America, Europe, Asia", "Late Jurasic to Early Cretaceous", "The Stegosaurus had between 17 and 22 seperate places and flat spines.");
+  let dino6 = new Dino("Elasmosaurus", 16000, 59, "carnivor", "North America", "Late Cretaceous", "Elasmosaurus was a marine reptile first discovered in Kansas.");
+  let dino7 = new Dino("Pteranodon", 44, 20, "carnivor", "North America", "Late Cretaceous", "Actually a flying reptile, the Pteranodon is not a dinosaur.");
+  let dino8 = new Dino("Pigeon", 0.5, 9, "herbavor", "World Wide", "Holocene", "All birds are living dinosaurs.");
 
   var dinos = [dino1, dino2, dino3, dino4, dino5, dino6, dino7, dino8];
   return dinos;
