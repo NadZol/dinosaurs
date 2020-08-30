@@ -20,12 +20,12 @@ function createDinoObjects() {
   let dino7 = new Dino("Pteranodon", 44, 20, "carnivor", "North America", "Late Cretaceous", "Actually a flying reptile, the Pteranodon is not a dinosaur.");
   let dino8 = new Dino("Pigeon", 0.5, 9, "herbavor", "World Wide", "Holocene", "All birds are living dinosaurs.");
 
-  var dinos = [dino1, dino2, dino3, dino4, dino5, dino6, dino7, dino8];
+  let dinos = [dino1, dino2, dino3, dino4, dino5, dino6, dino7, dino8];
   return dinos;
 }
 
 function getRandDinoFact(obj) {
-  var newFact =  obj.fact;
+  let newFact =  obj.fact;
   if(obj.species !== "Pigeon"){
     switch(Math.floor(Math.random() * 6)) {
       case 0:
@@ -50,7 +50,7 @@ function getRandDinoFact(obj) {
 
 // Create Human Object
 function createHumanObject() {
-  var human = {
+  let human = {
     "name": document.getElementById("name").value
   };
   return human;
@@ -61,27 +61,27 @@ function createHumanObject() {
 // Create Dino Compare Method 1
 // NOTE: Weight in JSON file is in lbs, height in inches.
 function compareWeight(obj) {
-  var humanWeight = document.getElementById("weight");
-  var difference = obj.weight / humanWeight.value; 
+  let humanWeight = document.getElementById("weight");
+  let difference = obj.weight / humanWeight.value; 
   return "Compared to a human, a " + obj.species + " is " + difference + " times heavier.";
 }
 
 // Create Dino Compare Method 2
 // NOTE: Weight in JSON file is in lbs, height in inches.
 function compareHeight(obj) {
-  var feet = document.getElementById("feet");
-  var inches = document.getElementById("inches");
-  var humanHeight = (feet.value * 12) + inches.value;
-  var difference = obj.height / humanHeight; 
+  let feet = document.getElementById("feet");
+  let inches = document.getElementById("inches");
+  let humanHeight = (feet.value * 12) + inches.value;
+  let difference = obj.height / humanHeight; 
   return "Compared to a human, a " + obj.species + " is " + difference + " times taller.";
 }
 
 // Create Dino Compare Method 3
 // NOTE: Weight in JSON file is in lbs, height in inches.
 function compareDiet(obj) {
-  var x = document.getElementById("diet");
-  var humanDiet = x.options[x.selectedIndex].text;
-  var message = "";
+  let x = document.getElementById("diet");
+  let humanDiet = x.options[x.selectedIndex].text;
+  let message = "";
   if(obj.diet === humanDiet.toLowerCase()){
     message = obj.species + " is a " + obj.diet + ", just like you!";
   }else{
@@ -94,10 +94,10 @@ function compareDiet(obj) {
 function createDinoTile(obj) {
   console.log("this is a dino");
 
-  var gridItem;
-  var image;
-  var name;
-  var fact;
+  let gridItem;
+  let image;
+  let name;
+  let fact;
   gridItem = document.createElement('div');
   image = document.createElement('img');
   name = document.createElement('h3');
@@ -118,9 +118,9 @@ function createDinoTile(obj) {
 function createHumanTile(human) {
   console.log("this is a human");
 
-  var gridItem;
-  var image;
-  var name;
+  let gridItem;
+  let image;
+  let name;
   gridItem = document.createElement('div');
   image = document.createElement('img');
   name = document.createElement('h3');
@@ -136,18 +136,18 @@ function createHumanTile(human) {
 
 // Add tiles to DOM
 function addTilesToDOM() {
-  var mainGrid = document.getElementById('grid');
-  var i;
-  var human = createHumanObject();
-  var dinos = createDinoObjects();
-  var j;
+  let mainGrid = document.getElementById('grid');
+  let i;
+  let human = createHumanObject();
+  let dinos = createDinoObjects();
+  let j;
 
   for (i = 0, j = 0; i < 9; i++) {
     if (i == 4) {
-      var x = createHumanTile(human);
+      let x = createHumanTile(human);
       mainGrid.appendChild(x);
     } else {
-      var x = createDinoTile(dinos[j]);
+      let x = createDinoTile(dinos[j]);
       mainGrid.appendChild(x);
       j++;
     }
@@ -156,7 +156,7 @@ function addTilesToDOM() {
 
 // Remove form from screen
 function removeFormFromScreen() {
-  var mainForm = document.getElementById('dino-compare');
+  let mainForm = document.getElementById('dino-compare');
   mainForm.style.display = 'none';
 }
 
