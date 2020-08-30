@@ -98,12 +98,12 @@ function createDinoTile(obj) {
   let image;
   let name;
   let fact;
-  gridItem = document.createElement('div');
-  image = document.createElement('img');
-  name = document.createElement('h3');
-  fact = document.createElement('p');
+  gridItem = document.createElement("div");
+  image = document.createElement("img");
+  name = document.createElement("h3");
+  fact = document.createElement("p");
 
-  gridItem.className = 'grid-item';
+  gridItem.className = "grid-item";
   image.src = "images/" + obj.species + ".png";
   name.innerHTML = obj.species; 
   fact.innerHTML = getRandDinoFact(obj); 
@@ -121,10 +121,10 @@ function createHumanTile(human) {
   let gridItem;
   let image;
   let name;
-  gridItem = document.createElement('div');
-  image = document.createElement('img');
-  name = document.createElement('h3');
-  gridItem.className = 'grid-item';
+  gridItem = document.createElement("div");
+  image = document.createElement("img");
+  name = document.createElement("h3");
+  gridItem.className = "grid-item";
   image.src = "images/human.png";
   name.innerHTML = human.name;
 
@@ -136,7 +136,7 @@ function createHumanTile(human) {
 
 // Add tiles to DOM
 function addTilesToDOM() {
-  let mainGrid = document.getElementById('grid');
+  let mainGrid = document.getElementById("grid");
   let i;
   let human = createHumanObject();
   let dinos = createDinoObjects();
@@ -156,8 +156,8 @@ function addTilesToDOM() {
 
 // Remove form from screen
 function removeFormFromScreen() {
-  let mainForm = document.getElementById('dino-compare');
-  mainForm.style.display = 'none';
+  let mainForm = document.getElementById("dino-compare");
+  mainForm.style.display = "none";
 }
 
 // On button click, prepare and display infographic
