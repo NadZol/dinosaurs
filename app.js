@@ -1,6 +1,6 @@
 // Create Dino Constructor
-function Dino(species, weight, height, diet, where, when, fact) {
-  this.species = species;
+function Dino(name, weight, height, diet, where, when, fact) {
+  this.name = name;
   this.weight = weight;
   this.height = height;
   this.diet = diet;
@@ -26,7 +26,7 @@ function createDinoObjects() {
 
 function getRandDinoFact(obj) {
   let newFact =  obj.fact;
-  if(obj.species !== "Pigeon"){
+  if(obj.name !== "Pigeon"){
     switch(Math.floor(Math.random() * 6)) {
       case 0:
         newFact = "This dinosaur was native to " + obj.where;
@@ -50,9 +50,7 @@ function getRandDinoFact(obj) {
 
 // Create Human Object
 function createHumanObject() {
-  let human = {
-    "name": document.getElementById("name").value
-  };
+  let human = new Dino(document.getElementById("name").value);
   return human;
 }
 
@@ -63,7 +61,7 @@ function createHumanObject() {
 function compareWeight(obj) {
   let humanWeight = document.getElementById("weight");
   let difference = obj.weight / humanWeight.value; 
-  return "Compared to a human, a " + obj.species + " is " + difference + " times heavier.";
+  return "Compared to a human, a " + obj.name + " is " + difference + " times heavier.";
 }
 
 // Create Dino Compare Method 2
@@ -73,7 +71,7 @@ function compareHeight(obj) {
   let inches = document.getElementById("inches");
   let humanHeight = (feet.value * 12) + inches.value;
   let difference = obj.height / humanHeight; 
-  return "Compared to a human, a " + obj.species + " is " + difference + " times taller.";
+  return "Compared to a human, a " + obj.name + " is " + difference + " times taller.";
 }
 
 // Create Dino Compare Method 3
@@ -83,9 +81,9 @@ function compareDiet(obj) {
   let humanDiet = x.options[x.selectedIndex].text;
   let message = "";
   if(obj.diet === humanDiet.toLowerCase()){
-    message = obj.species + " is a " + obj.diet + ", just like you!";
+    message = obj.name + " is a " + obj.diet + ", just like you!";
   }else{
-    message = "Unlike you, " + obj.species + " is a " + obj.diet;
+    message = "Unlike you, " + obj.name + " is a " + obj.diet;
   }
   return message;
 }
@@ -104,8 +102,8 @@ function createDinoTile(obj) {
   fact = document.createElement("p");
 
   gridItem.className = "grid-item";
-  image.src = "images/" + obj.species + ".png";
-  name.innerHTML = obj.species; 
+  image.src = "images/" + obj.name.toLowerCase() + ".png";
+  name.innerHTML = obj.name; 
   fact.innerHTML = getRandDinoFact(obj); 
 
   gridItem.appendChild(name);
